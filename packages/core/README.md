@@ -1,13 +1,15 @@
 <div align='center'>
 <img src="https://raw.githubusercontent.com/hemyWen/hemy-progress/main/assets/logo.png" /> 
-  <h2>hemy-progress在JS中使用</h2>
+  <h1>hemy-progress在JS中使用</h1>
 </div>
  <hr />
 
-## usage
- - [JS](https://github.com/hemyWen/hemy-progress/packages/core)
- - [React](https://github.com/hemyWen/react-hemy-progress/packages/react)
- - [Vue](https://github.com/hemyWen/react-hemy-progress/packages/vue)
+## 文档
+[Home](https://github.com/hemyWen/hemy-progress)
+
+ - [JS](https://github.com/hemyWen/hemy-progress/tree/master/packages/core)
+ - [React](https://github.com/hemyWen/hemy-progress/tree/master/packages/react)
+ - [Vue](https://github.com/hemyWen/hemy-progress/tree/master/packages/vue)
 
 ## 安装
 通过npm
