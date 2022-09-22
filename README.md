@@ -34,9 +34,9 @@
 <hr />
 
 ## 文档
- - [JS](https://github.com/hemyWen/hemy-progress/packages/core)
- - [React](https://github.com/hemyWen/react-hemy-progress/packages/react)
- - [Vue](https://github.com/hemyWen/react-hemy-progress/packages/vue)
+ - [JS](https://github.com/hemyWen/hemy-progress/tree/master/packages/core)
+ - [React](https://github.com/hemyWen/hemy-progress/tree/master/packages/react)
+ - [Vue](https://github.com/hemyWen/hemy-progress/tree/master/packages/vue)
 
 
 ## 常规图形
