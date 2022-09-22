@@ -1,7 +1,7 @@
 
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/hemyWen/hemy-progress/main/assets/logo.png" /> 
+<img src="https://raw.githubusercontent.com/hemyWen/hemy-progress/master/assets/logo.png" /> 
 <h2>hemy-progress</h2>
 <p>基于svg制作的进度条,支持线条,环形,椭圆,矩形等其他自定义图形</p>
 <table style="width:auto;display:table">
@@ -25,7 +25,7 @@
     </tr>
      <tr>
         <td>React</td>
-        <td><a href='https://github.com/hemyWen/hemy-progress/packages/react'>@hemy-progress/react</a></td>
+   master/assets     <td><a href='https://github.com/hemyWen/hemy-progress/packages/react'>@hemy-progress/react</a></td>
         <td>npm install @hemy-progress/react</td>
     </tr>
 </table>
@@ -46,7 +46,7 @@ type:String 支持以下值
 - rect 矩形
 - ellipse 椭圆
 - path 自定义图形
-![常规例子](https://raw.githubusercontent.com/hemyWen/hemy-progress/main/assets/1.png)
+![常规例子](https://raw.githubusercontent.com/hemyWen/hemy-progress/master/assets/1.png)
 
 
 
@@ -58,13 +58,13 @@ type:String 支持以下值
 - textStyle: 显示文字的样式
 - isFan=true  设置为扇形,仅支持type=circle的情况
 
-![自定义颜色配置](https://raw.githubusercontent.com/hemyWen/hemy-progress/main/assets/2.png)
+![自定义颜色配置](https://raw.githubusercontent.com/hemyWen/hemy-progress/master/assets/2.png)
 
 ## 虚线样式
 - isDashed:Boolean 开启虚线
 - dashedLength:Number 虚线长度
 - dashedDistance:Number 虚线间隔
-![常规例子](https://raw.githubusercontent.com/hemyWen/hemy-progress/main/assets/3.png)
+![常规例子](https://raw.githubusercontent.com/hemyWen/hemy-progress/master/assets/3.png)
 
 <font color='red'>当type为line时,虚线需要设置合适虚线长度和虚线间隔,以便最后一个虚线刚好落在容器的最后面,例:虚线宽度和间隔都为5px,则进度条(容器)总宽度可以设为105px 115px 125px...
 </font> 
@@ -72,16 +72,16 @@ type:String 支持以下值
 ### 自定义显示内容
 - 自定义内容,图片,icon图标,文字等
 
-![自定义显示内容](https://raw.githubusercontent.com/hemyWen/hemy-progress/main/assets/4.png)
+![自定义显示内容](https://raw.githubusercontent.com/hemyWen/hemy-progress/master/assets/4.png)
 
 ## 复杂图形
-![复杂例子](https://raw.githubusercontent.com/hemyWen/hemy-progress/main/assets/5.png)
+![复杂例子](https://raw.githubusercontent.com/hemyWen/hemy-progress/master/assets/5.png)
 
 ## 复杂图形的制作
 可在在线的svg制作工具上,选择或者画出想要的图形,例如: [菜鸟svg在线工具](https://c.runoob.com/more/svgeditor/)
 
 复制源代码中最后一个d值,再设置合适的pathLength,再设置其他自己喜欢的属性值
-![复杂图形制作](https://raw.githubusercontent.com/hemyWen/hemy-progress/main/assets/6.gif)
+![复杂图形制作](https://raw.githubusercontent.com/hemyWen/hemy-progress/master/assets/6.gif)
 
 ## 使用
 <table>
