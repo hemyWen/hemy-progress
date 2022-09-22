@@ -1,5 +1,5 @@
 <div align='center'>
-<img src="../../assets/logo.png" /> 
+<img src="https://raw.githubusercontent.com/hemyWen/hemy-progress/master/assets/logo.png" /> 
   <h1>hemy-progress在React中使用</h1>
 </div>
  <hr />
