@@ -1,0 +1,10 @@
+{
+  "singleQuote": true,
+  "semi": false,
+  "proseWrap": "preserve",
+  "comma-dangle": [
+    2,
+    "never"
+  ],
+  "printWidth": 120
+}

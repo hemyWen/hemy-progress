@@ -1,0 +1,134 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.tokenColorCustomizations": {
+        // ],//规则与样式
+        // "functions": "#00c3ff", //函数颜色
+        // "strings": "#ffd900", //字符串颜色
+        // "keywords": "#fd0696", //关键字颜色
+        // "types": "#ff0088", //类型定义颜色
+        // "variables": "#00ffc8", //变量颜色
+        "numbers": "#ff0095", //数字颜色
+        "textMateRules": [
+            {
+                "name": "HTML: Attribute Names",
+                "scope": [
+                    "meta.tag entity.other.attribute-name",
+                    "entity.other.attribute-name.html"
+                ],
+                "settings": {
+                    "fontStyle": "italic",
+                    "foreground": "#62b3ff"
+                }
+            },
+        ]
+    },
+    "editor.formatOnSave": true,
+    "eslint.run": "onType",
+    "eslint.options": {
+        "extensions": [
+            ".js",
+            ".vue",
+            ".html",
+            ".dart"
+        ]
+    },
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "files.eol": "\n",
+    "[markdown]": {
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        }
+    },
+    "files.associations": {
+        ".eslintrc": "json",
+        "*.wpy": "vue",
+        "*.wxss": "css",
+        "*.wxml": "html",
+        "*.dart": "dart",
+        "*.cjson": "jsonc",
+        "*.wxs": "javascript",
+        "*.js": "javascriptreact",
+        // "*.js": "javascriptreact"
+    },
+    "git.enableSmartCommit": true,
+    "explorer.confirmDelete": false,
+    "window.zoomLevel": 1,
+    "vsicons.dontShowNewVersionMessage": true,
+    "terminal.integrated.rendererType": "dom",
+    "prettier.semi": true,
+    "prettier.singleQuote": true,
+    "prettier.printWidth": 120, // 超过最大值换行
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "breadcrumbs.enabled": true,
+    "merge-conflict.autoNavigateNextConflict.enabled": true,
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "michelemelluso.code-beautifier"
+    },
+    "search.exclude": {
+        "**/node_modules": false
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.defaultLanguage": "vue",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "vue-format.attr_end_with_gt": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "path-autocomplete.pathMappings": {
+        "@": "${folder}/src"
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "emmet.includeLanguages": {
+        "wxml": "html"
+    },
+    "minapp-vscode.disableAutoConfig": true,
+    "eslint.lintTask.enable": true,
+    // "editor.codeActionsOnSave": {
+    //     "source.fixAll.eslint": true
+    // },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "eslint.format.enable": false,
+    "javascript.validate.enable": false,
+    "sync.gist": "d409f55b1fb7d306ef5576260b963e92",
+    //头部注释
+    "fileheader.customMade": {
+        "Author": "whm",
+        "Date": "Do not edit", // 文件创建时间(不变)
+        "LastEditTime": "Do not edit", // 文件最后编辑时间
+        "Description": "",
+    },
+    // 函数注释 
+    "fileheader.cursorMode": {
+        "description": "",
+        "param": "",
+        "return": ""
+    },
+    "fileheader.configObj": {
+        "autoAdd": false,
+        "createHeader": false,
+    },
+}

@@ -1,0 +1,80 @@
+.progress-container {
+  width: 100%;
+}
+.progress-bar-outer {
+  width: 100%;
+  height: 30px;
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+}
+
+.progress-bar-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  text-align: right;
+  border-radius: 100px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.progress-bar-inner::after {
+  display: inline-block;
+  content: '';
+  height: 100%;
+  vertical-align: middle;
+}
+.progress-bar-text {
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 12px;
+  margin: 0 5px;
+}
+
+/* --- 线条虚线 */
+.progress-bar-inner-dashed {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.progress-bar-inner-dashed .back-dash {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.progress-bar-inner-dashed .back-dash,
+.progress-bar-inner-dashed .inner-dash {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+.progress-bar-inner-dashed .item {
+  flex: 0 0 auto;
+  height: 100%;
+}
+/* --- 线条虚线 */
+
+.progress-circle-text {
+  color: #fff;
+}
+.progress-circle__back,
+.progress-circle__item {
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.svg-container {
+  position: relative;
+}
+.svg-container .slot-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

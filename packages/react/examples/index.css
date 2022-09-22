@@ -1,0 +1,10 @@
+.App {
+  padding: 20px;
+}
+.container {
+  display: flex;
+}
+.container .item {
+  width: 200px;
+  padding: 10px;
+}
