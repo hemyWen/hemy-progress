@@ -13,19 +13,19 @@
     <tr>
         <td>JS</td>
         <td>
-        <a href='https://github.com/hemyWen/hemy-progress/packages/core'>
+        <a href='https://www.npmjs.com/package/hemy-progress'>
         hemy-progress</a>
         </td>
         <td >npm install hemy-progress</td>
     </tr>
     <tr>
         <td>Vue</td>
-        <td><a href='https://github.com/hemyWen/hemy-progress/packages/vue'>@hemy-progress/vue</a></td>
+        <td><a href='https://www.npmjs.com/package/@hemy-progress/vue'>@hemy-progress/vue</a></td>
         <td>npm install @hemy-progress/vue</td>
     </tr>
      <tr>
         <td>React</td>
-   master/assets     <td><a href='https://github.com/hemyWen/hemy-progress/packages/react'>@hemy-progress/react</a></td>
+   master/assets     <td><a href='https://www.npmjs.com/package/@hemy-progress/react'>@hemy-progress/react</a></td>
         <td>npm install @hemy-progress/react</td>
     </tr>
 </table>
