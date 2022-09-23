@@ -1,12 +1,14 @@
 {
   "name": "hemy-progress",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "private": false,
   "description": "基于svg开发的进度条组件,svg progress for js",
   "keywords": [
     "svg",
     "progress",
-    "javascript"
+    "javascript",
+    "js",
+    "进度条"
   ],
   "author": "hemyWen",
   "license": "MIT",

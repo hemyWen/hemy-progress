@@ -4,7 +4,7 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 import './index.css';
 
-import Demo from './demo'
+import Demo from './demo';
 const App = () => (
   <div className="App">
     <div className="line container">

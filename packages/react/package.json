@@ -1,14 +1,19 @@
 {
   "name": "@hemy-progress/react",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": false,
   "description": "基于svg开发的react进度条组件,svg progress for react",
-  "main": "index.js",
+  "main": "lib/hemy-progress.js",
   "keywords": [
     "svg",
     "progress",
-    "react"
+    "react",
+    "javascript",
+    "js",
+    "进度条"
   ],
+  "author": "hemyWen",
+  "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.config.dev.js --open",
     "build": "webpack --config config/webpack.config.prod.js",
@@ -17,8 +22,10 @@
   "files": [
     "lib/*"
   ],
-  "author": "hemyWen",
-  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.18.13",
@@ -32,6 +39,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^4.2.3",
     "url-loader": "^4.1.1",
     "webpack": "^4.46.0",
     "webpack-cli": "^4.10.0",

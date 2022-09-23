@@ -1,21 +1,30 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const TerserPlugin = require('terser-webpack-plugin');
 const baseConfig = require('./webpack.config.base.js'); // 引用公共的配置
 
 const prodConfig = {
   mode: 'production',
-  entry: path.join(__dirname, '../src/index.js'),
+  entry: {
+    'hemy-progress': path.join(__dirname, '../src/index.js'),
+    'hemy-progress.min': path.join(__dirname, '../src/index.js'),
+  },
   output: {
-    path: path.join(__dirname, '../lib/'),
-    filename: 'index.js',
+    filename: '[name].js', // 打包后的文件名称
+    path: path.resolve(__dirname, '../lib'), // 打包后的目录
+    library: 'hemyProgress',
     libraryTarget: 'umd',
     libraryExport: 'default',
   },
   plugins: [new CleanWebpackPlugin()],
   optimization: {
     minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        include: /\.min\.js$/,
+      }),
+    ],
   },
   externals: {
     // 外部依赖

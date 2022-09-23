@@ -7,9 +7,9 @@ const entry = devMode ? './example/index.js' : './src/main.js'
 module.exports = {
     mode: devMode ? 'development' : 'production',
 
-    entry: {
+    entry: devMode ? ['@babel/polyfill', path.resolve(__dirname, entry)] : {
         'hemy-progress': ['@babel/polyfill', path.resolve(__dirname, entry)],
-        'hemy-progress.min': ['@babel/polyfill', path.resolve(__dirname, entry)],
+        'hemy-progress.min': ['@babel/polyfill', path.resolve(__dirname, entry)]
     },
     output: {
         filename: '[name].js',      // 打包后的文件名称
