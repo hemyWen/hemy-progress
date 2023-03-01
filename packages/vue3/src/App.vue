@@ -10,8 +10,7 @@
   </div>
 </template>
 <script>
-// import HemyProgress from '../packages/components/index.vue';
-import HemyProgress from '@hemy-progress/vue3';
+import HemyProgress from '../packages/components/index.vue';
 export default {
   name: 'App',
   components: {

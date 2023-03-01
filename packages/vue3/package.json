@@ -32,7 +32,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@hemy-progress/vue3": "^1.1.0",
     "vite-plugin-css-injected-by-js": "^3.0.1",
     "vue": "^3.2.30"
   },
