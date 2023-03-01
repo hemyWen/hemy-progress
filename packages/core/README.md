@@ -5,138 +5,151 @@
  <hr />
 
 ## 文档
+
 [Home](https://github.com/hemyWen/hemy-progress)
 
- - [JS](https://github.com/hemyWen/hemy-progress/tree/master/packages/core)
- - [React](https://github.com/hemyWen/hemy-progress/tree/master/packages/react)
- - [Vue](https://github.com/hemyWen/hemy-progress/tree/master/packages/vue)
+- [JS](https://github.com/hemyWen/hemy-progress/tree/master/packages/core)
+- [React](https://github.com/hemyWen/hemy-progress/tree/master/packages/react)
+- [Vue](https://github.com/hemyWen/hemy-progress/tree/master/packages/vue)
+- [Vue3](https://github.com/hemyWen/hemy-progress/tree/master/packages/vue3)
 
 ## 安装
-通过npm
+
+通过 npm
+
 ```js
 npm install hemy-progress
- ```
- ## 基本使用
+```
 
- ```html
-<div id='progress'></div>
+## 基本使用
+
+```html
+<div id="progress"></div>
 ```
+
 ```js
-import hemyProgress from 'hemy-pregress'
+import hemyProgress from 'hemy-pregress';
 ```
-type:String和percentage:Number必填 
-type支持以下值
+
+type:String 和 percentage:Number 必填
+type 支持以下值
+
 - line 线条
 - circle 环形
 - rect 矩形
 - ellipse 椭圆
-- path 自定义图形,d值必填
-
-```js
-new hemyProgress('#progress',{
-  type:'circle',
-  percentage:60
-})
-```
-## 自定义图形大小颜色配置
-
-- strokeWidth,backStrokewidth  进度条和背景的宽度
-- strokeColor,backStrokeColor  进度条和背景的颜色
-- fillColor: 填充颜色
-- textStyle: 显示文字的样式
-- lineHeight:  type=line时,进度条高度
-- radius:  type=circle时,circle的半径大小
-- borderRadius: type=line,rect时的圆角大小
-- 
-更多请查看[API使用介绍](#instructions)
+- path 自定义图形,d 值必填
 
 ```js
 new hemyProgress('#progress', {
-    type: 'circle',
-    percentage: 50,
-    strokeColor: 'red',
-    fillColor: '#D7BDE2',
-    backStrokeColor: '#F5EEF8 ',
-    radius: 80,
-    strokeWidth: 20,
-    backStrokeWidth: 20,
-    strokeLinecap: 'round',
-    textStyle: { fontSize: '20px', color: 'green' }
-})
-
+  type: 'circle',
+  percentage: 60,
+});
 ```
-进度条颜色可传入一个颜色数组 如 strokeColor=['green','blue','yellow','orange','red'],在进度0-20,20-40,40-60,60-80,80-100时分别显示'green','blue','yellow','orange','red'
-- 调用实例的<font color='red'>setProgress</font>方法,参数为一个object,重新设置当前进度条样式
+
+## 自定义图形大小颜色配置
+
+- strokeWidth,backStrokewidth 进度条和背景的宽度
+- strokeColor,backStrokeColor 进度条和背景的颜色
+- fillColor: 填充颜色
+- textStyle: 显示文字的样式
+- lineHeight: type=line 时,进度条高度
+- radius: type=circle 时,circle 的半径大小
+- borderRadius: type=line,rect 时的圆角大小
+- 更多请查看[API 使用介绍](#instructions)
+
+```js
+new hemyProgress('#progress', {
+  type: 'circle',
+  percentage: 50,
+  strokeColor: 'red',
+  fillColor: '#D7BDE2',
+  backStrokeColor: '#F5EEF8 ',
+  radius: 80,
+  strokeWidth: 20,
+  backStrokeWidth: 20,
+  strokeLinecap: 'round',
+  textStyle: { fontSize: '20px', color: 'green' },
+});
+```
+
+进度条颜色可传入一个颜色数组 如 strokeColor=['green','blue','yellow','orange','red'],在进度 0-20,20-40,40-60,60-80,80-100 时分别显示'green','blue','yellow','orange','red'
+
+- 调用实例的<font color='red'>setProgress</font>方法,参数为一个 object,重新设置当前进度条样式
+
 ```js
 const progress = new hemyProgress('#progress', {
-    type: "line",
-    percentage: 20,
-    strokeColor: ['green', 'blue', 'yellow', 'orange', 'red'],
-    borderRadius: 20,
-})
-progress.setProgress({percentage:80})
+  type: 'line',
+  percentage: 20,
+  strokeColor: ['green', 'blue', 'yellow', 'orange', 'red'],
+  borderRadius: 20,
+});
+progress.setProgress({ percentage: 80 });
 ```
 
-
 ## 虚线样式
+
 - isDashed:Boolean 开启虚线
 - dashedLength:Number 虚线长度
 - dashedDistance:Number 虚线间隔
 
-<font color='red'>当type为line时,虚线需要设置合适虚线长度和虚线间隔,以便最后一个虚线刚好落在容器的最后面,例:虚线宽度和间隔都为5px,则进度条(容器)总宽度可以设为105px 115px 125px...
-</font> 
+<font color='red'>当 type 为 line 时,虚线需要设置合适虚线长度和虚线间隔,以便最后一个虚线刚好落在容器的最后面,例:虚线宽度和间隔都为 5px,则进度条(容器)总宽度可以设为 105px 115px 125px...
+</font>
 
 ```js
 new hemyProgress('#progress', {
-    type: 'circle',
-    percentage: 50,
-    strokeWidth: 20,
-    backStrokeWidth: 20,
-    isDashed: true
-})
-  
+  type: 'circle',
+  percentage: 50,
+  strokeWidth: 20,
+  backStrokeWidth: 20,
+  isDashed: true,
+});
 ```
+
 ## 自定义图形
+
 - type=path
-- d值必填
+- d 值必填
 - pathLength 自定义图形路径的总长度,如果存在，路径将进行缩放，以便计算各点相当于此值的路径长度
 
 ```js
 new hemyProgress('#progress', {
-    type: 'path',
-    percentage: 50,
-    showText: false,
-    strokeWidth: 20,
-    backStrokeWidth: 20,
-    strokeLinecap: 'round',
-    strokeLinejoin: 'round',
-    strokeColor: 'blue',
-    pathLength: 800,
-    d: 'm20.74,153.83019l75.9583,-69.50019l0,34.75l110.08345,0l0,-34.75l75.95827,69.50019l-75.95827,69.49982l0,-34.74991l-110.08345,0l0,34.74991l-75.9583,-69.49982z'
-})
+  type: 'path',
+  percentage: 50,
+  showText: false,
+  strokeWidth: 20,
+  backStrokeWidth: 20,
+  strokeLinecap: 'round',
+  strokeLinejoin: 'round',
+  strokeColor: 'blue',
+  pathLength: 800,
+  d: 'm20.74,153.83019l75.9583,-69.50019l0,34.75l110.08345,0l0,-34.75l75.95827,69.50019l-75.95827,69.49982l0,-34.74991l-110.08345,0l0,34.74991l-75.9583,-69.49982z',
+});
 ```
 
 ## 自定义显示内容(插槽)
-- 以属性slot值方式传入
+
+- 以属性 slot 值方式传入
+
 ```js
 new hemyProgress('#progress', {
-    type: 'circle',
-    percentage: 50,
-    strokeWidth: 20,
-    backStrokeWidth: 20,
-    radius: 60,
-    strokeColor: '#641E16',
-    strokeLinecap: 'round',
-    slot: `
+  type: 'circle',
+  percentage: 50,
+  strokeWidth: 20,
+  backStrokeWidth: 20,
+  radius: 60,
+  strokeColor: '#641E16',
+  strokeLinecap: 'round',
+  slot: `
     <div style="text-align:center">
     <img src='lufei.png' style="width:100%;height:100%;border-radius:100%"></img>
    </div>
-    `
-})
-
+    `,
+});
 ```
 
-## API使用介绍
+## API 使用介绍
+
 <div id='instructions'></div>
 <table>
   <tr>
@@ -362,4 +375,5 @@ new hemyProgress('#progress', {
 </table>
 
 ## 实例方法
-- setProgress(obj): 参数为一个对象{percentage:number,...},属性为以上[API](#instructions)所列属性,调用此方法,可重新设置当前进度条样式(重置type除外)
+
+- setProgress(obj): 参数为一个对象{percentage:number,...},属性为以上[API](#instructions)所列属性,调用此方法,可重新设置当前进度条样式(重置 type 除外)
