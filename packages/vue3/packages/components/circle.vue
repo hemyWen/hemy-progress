@@ -1,7 +1,7 @@
 <!--
  * @Author: whm
  * @Date: 2022-08-10 09:15:49
- * @LastEditTime: 2023-03-01 10:47:14
+ * @LastEditTime: 2023-03-01 11:16:58
  * @Description: 
 -->
 <template>
@@ -54,7 +54,7 @@
   </div>
 </template>
 <script lang="ts">
-import { computed, reactive } from 'vue';
+import { computed } from 'vue';
 import { useParams } from './useParams';
 import Props from './props';
 export default {
@@ -63,7 +63,6 @@ export default {
   },
   data() {
     return {
-      // type: 'circle',
       maskID: 'progress_circle_mask',
     };
   },

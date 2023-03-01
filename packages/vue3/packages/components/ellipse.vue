@@ -30,7 +30,7 @@
           :cy="centerPoint.y"
           :rx="rx"
           :ry="ry"
-          :style="style"
+          :style="style(maskID)"
           fill="none"
         />
         <text
@@ -51,30 +51,35 @@
     </div>
   </div>
 </template>
-<script>
-import mixin from './mixin';
+<script lang="ts">
+import { computed } from 'vue';
+import { useParams } from './useParams';
+import Props from './props';
 export default {
-  mixins: [mixin],
-  computed: {
-    centerPoint() {
-      const x = this.width / 2;
-      const y = this.height / 2;
-      return { x, y };
-    },
-    //椭圆周长 L=2πb+4(a-b)
-    perimeter() {
-      const x = this.rx;
-      const y = this.ry;
-      const d = x >= y ? y : x;
-      const L = 2 * Math.PI * d + 4 * Math.abs(x - y);
-      return L;
-    },
+  props: {
+    ...Props,
   },
   data() {
     return {
-      type: 'ellipse',
       maskID: 'progress_ellipse_mask',
     };
+  },
+  setup(props, context) {
+    const centerPoint = computed(() => {
+      const x = props.width / 2;
+      const y = props.height / 2;
+      return { x, y };
+    });
+    //椭圆周长 L=2πb+4(a-b)decrease
+    const perimeter = computed(() => {
+      const x = props.rx;
+      const y = props.ry;
+      const d = x >= y ? y : x;
+      const L = 2 * Math.PI * d + 4 * Math.abs(x - y);
+      return L;
+    });
+    const params = useParams(props, context, perimeter);
+    return { ...params, centerPoint, perimeter };
   },
 };
 </script>

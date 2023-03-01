@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 const { resolve } = require('path'); //必须要引入resolve
 import path from 'path';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 function _resolve(dir: string) {
   return resolve(__dirname, dir);
 }
@@ -14,8 +15,9 @@ export default defineConfig({
       '@': _resolve('src'),
     },
   },
-  plugins: [vue()],
+  plugins: [vue(), cssInjectedByJsPlugin()],
   build: {
+    outDir: 'lib',
     lib: {
       entry: path.resolve(__dirname, './packages/index.js'),
       name: 'HemyProgress',

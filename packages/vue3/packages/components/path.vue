@@ -11,7 +11,7 @@
           class="progress-path__item"
           :pathLength="pathLength"
           :d="d"
-          :style="style"
+          :style="style(maskID)"
           fill="none"
         />
         <text
@@ -32,14 +32,13 @@
     </div>
   </div>
 </template>
-<script>
-import mixin from './mixin';
+<script lang="ts">
+import { computed } from 'vue';
+import { useParams } from './useParams';
+import Props from './props';
 export default {
-  mixins: [mixin],
-  computed: {
-    perimeter() {
-      return this.pathLength;
-    },
+  props: {
+    ...Props,
   },
   mounted() {
     const pathElement = this.$refs.progressPath.getBoundingClientRect();
@@ -51,17 +50,23 @@ export default {
     const pathTop = pathElement.top;
     const leftDiff = Math.ceil(pathLeft - svgLeft);
     const topDiff = Math.ceil(pathTop - svgTop);
-
     this.svgWidth = leftDiff * 2 + width;
     this.svgHeight = topDiff * 2 + height;
   },
   data() {
     return {
-      type: 'path',
       maskID: 'progress_path_mask',
       svgWidth: 0,
       svgHeight: 0,
     };
+  },
+  setup(props, context) {
+    //周长
+    const perimeter = computed(() => {
+      return props.pathLength;
+    });
+    const params = useParams(props, context, perimeter);
+    return { ...params, perimeter };
   },
 };
 </script>

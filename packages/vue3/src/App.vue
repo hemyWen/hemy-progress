@@ -2,13 +2,16 @@
   <div id="app">
     <div class="container">
       <div class="item" style="margin-left: 200px">
-        <HemyProgress type="circle" strokeLinecap="round" :strokeWidth="20" :backStrokeWidth="20" :percentage="60" />
+        <HemyProgress type="circle" :percentage="percentage" />
+        <button @click="increase">+</button>
+        <button @click="decrease">-</button>
       </div>
     </div>
   </div>
 </template>
 <script>
-import HemyProgress from '../packages/components/index.vue';
+// import HemyProgress from '../packages/components/index.vue';
+import HemyProgress from '@hemy-progress/vue3';
 export default {
   name: 'App',
   components: {

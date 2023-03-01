@@ -18,50 +18,53 @@
     </div>
   </div>
 </template>
-<script>
-import mixin from './mixin';
+<script lang="ts">
+import { useParams } from './useParams';
+import Props from './props';
 export default {
-  mixins: [mixin],
+  props: {
+    ...Props,
+  },
   computed: {
     dashItemStyle() {
       const style = {};
-      style.width = this.dashedLength + 'px';
-      style.marginRight = this.dashedDistance + 'px';
+      style['width'] = this.dashedLength + 'px';
+      style['marginRight'] = this.dashedDistance + 'px';
       return style;
     },
     dashOuterItemStyle() {
       const style = {};
-      style.background = this.backStrokeColor;
-      style.zIndex = 10;
+      style['background'] = this.backStrokeColor;
+      style['zIndex'] = 10;
       return { ...this.dashItemStyle, ...style };
     },
     dashInnerItemStyle() {
       const style = {};
-      style.background = this.currentStrokeColor;
-      style.zIndex = 99;
+      style['background'] = this.currentStrokeColor;
+      style['zIndex'] = 99;
       return { ...this.dashItemStyle, ...style };
     },
     dashInnerStyle() {
       const style = {};
-      style.width = this.percentage + '%';
+      style['width'] = this.percentage + '%';
       return style;
     },
     barStyle() {
       const style = {};
-      style.width = this.percentage + '%';
-      style.background = this.currentStrokeColor;
-      style.transition = this.isTransition ? 'width 0.6s ease' : '';
-      style.borderRadius = this.borderRadius + 'px';
-      style.height = this.lineHeight + 'px';
+      style['width'] = this.percentage + '%';
+      style['background'] = this.currentStrokeColor;
+      style['transition'] = this.isTransition ? 'width 0.6s ease' : '';
+      style['borderRadius'] = this.borderRadius + 'px';
+      style['height'] = this.lineHeight + 'px';
       return style;
     },
     outBarStyle() {
       const style = {};
       if (!this.isDashed) {
-        style.background = this.backStrokeColor;
+        style['background'] = this.backStrokeColor;
       }
-      style.borderRadius = this.borderRadius + 'px';
-      style.height = this.lineHeight + 'px';
+      style['borderRadius'] = this.borderRadius + 'px';
+      style['height'] = this.lineHeight + 'px';
       return style;
     },
   },
@@ -77,6 +80,9 @@ export default {
       this.count = Math.ceil(width / length) + 1;
     }
   },
-  methods: {},
+  setup(props, context) {
+    const params = useParams(props, context);
+    return { ...params };
+  },
 };
 </script>

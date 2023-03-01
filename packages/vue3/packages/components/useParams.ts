@@ -1,5 +1,5 @@
 import { computed, toRef, toRefs, ref } from 'vue';
-export function useParams(props, context, perimeter) {
+export function useParams(props, context, perimeter?: any) {
   const {
     type,
     format,

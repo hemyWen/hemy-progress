@@ -27,7 +27,7 @@
           :y="origin"
           :width="width"
           :height="height"
-          :style="style"
+          :style="style(maskID)"
           fill="none"
         />
         <text
@@ -48,30 +48,34 @@
     </div>
   </div>
 </template>
-<script>
-import mixin from './mixin';
+<script lang="ts">
+import { computed } from 'vue';
+import { useParams } from './useParams';
+import Props from './props';
 export default {
-  mixins: [mixin],
-
-  computed: {
-    centerPoint() {
-      const x = (this.strokeWidth + this.width) / 2;
-      const y = (this.strokeWidth + this.height) / 2;
-      return { x, y };
-    },
-    //矩形周长
-    perimeter() {
-      return (Number(this.width) + Number(this.height)) * 2;
-    },
-    origin() {
-      return this.strokeWidth / 2;
-    },
+  props: {
+    ...Props,
   },
   data() {
     return {
-      type: 'rect',
       maskID: 'progress_rect_mask',
     };
+  },
+  setup(props, context) {
+    const centerPoint = computed(() => {
+      const x = (props.strokeWidth + props.width) / 2;
+      const y = (props.strokeWidth + props.height) / 2;
+      return { x, y };
+    });
+    //矩形周长
+    const perimeter = computed(() => {
+      return (Number(props.width) + Number(props.height)) * 2;
+    });
+    const origin = computed(() => {
+      return props.strokeWidth / 2;
+    });
+    const params = useParams(props, context, perimeter);
+    return { ...params, centerPoint, perimeter, origin };
   },
 };
 </script>
