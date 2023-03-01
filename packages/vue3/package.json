@@ -1,0 +1,45 @@
+{
+  "name": "@hemy-progress/vue3",
+  "version": "0.1.0",
+  "private": false,
+  "description": "基于svg开发的vue3进度条组件,svg progress for vue3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hemyWen/hemy-progress.git"
+  },
+  "keywords": [
+    "svg",
+    "progress",
+    "progress-bar",
+    "javascript",
+    "vue",
+    "vue3",
+    "进度条"
+  ],
+  "author": "hemyWen",
+  "license": "MIT",
+  "main": "lib/hemy-progress.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.30"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.21",
+    "@vitejs/plugin-vue": "^2.1.0",
+    "@vue/compiler-sfc": "^3.0.5",
+    "typescript": "^4.3.2",
+    "vite": "^2.7.13",
+    "vue-tsc": "^0.31.2"
+  }
+}
