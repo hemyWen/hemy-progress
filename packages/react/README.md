@@ -8,63 +8,70 @@
 
 [Home](https://github.com/hemyWen/hemy-progress)
 
- - [JS](https://github.com/hemyWen/hemy-progress/tree/master/packages/core)
- - [React](https://github.com/hemyWen/hemy-progress/tree/master/packages/react)
- - [Vue](https://github.com/hemyWen/hemy-progress/tree/master/packages/vue)
+- [JS](https://github.com/hemyWen/hemy-progress/tree/master/packages/core)
+- [React](https://github.com/hemyWen/hemy-progress/tree/master/packages/react)
+- [Vue](https://github.com/hemyWen/hemy-progress/tree/master/packages/vue)
+- [Vue3](https://github.com/hemyWen/hemy-progress/tree/master/packages/vue3)
 
 ## 安装
-通过npm
+
+通过 npm
+
 ```
 npm install @hemy-progress/react
- ```
- ## 基本使用
+```
 
-type:String和percentage:Number必填 
-type支持以下值
+## 基本使用
+
+type:String 和 percentage:Number 必填
+type 支持以下值
+
 - line 线条
 - circle 环形
 - rect 矩形
 - ellipse 椭圆
-- path 自定义图形,d值必填
-
- ```jsx
- import HemyProgress from '@hemy-progress/react'
- export default function Demo(){
-    return <HemyProgress type="circle" percentage={60} />
- }
-
-```
-## 自定义图形大小颜色配置
-
-- strokeWidth,backStrokewidth  进度条和背景的宽度
-- strokeColor,backStrokeColor  进度条和背景的颜色
-- fillColor: 填充颜色
-- textStyle: 显示文字的样式
-- lineHeight:  type=line时,进度条高度
-- radius:  type=circle时,circle的半径大小
-- borderRadius: type=line,rect时的圆角大小
-
-更多请查看[API使用介绍](#instructions)
+- path 自定义图形,d 值必填
 
 ```jsx
-export default function Demo () {
-    return (
-        <HemyProgress
-            type="circle"
-            percentage={60}
-            radius={80}
-            strokeColor='red'
-            fillColor='#D7BDE2'
-            backStrokeColor='#F5EEF8'
-            strokeWidth={20}
-            backStrokeWidth={20}
-           strokeLinecap='round'
-           textStyle={{ fontSize: '20px', color: 'green' }}
-        />
-    )
+import HemyProgress from '@hemy-progress/react';
+export default function Demo() {
+  return <HemyProgress type="circle" percentage={60} />;
 }
 ```
-进度条颜色可传入一个颜色数组 如 strokeColor=['green','blue','yellow','orange','red'],在进度0-20,20-40,40-60,60-80,80-100时分别显示'green','blue','yellow','orange','red'
+
+## 自定义图形大小颜色配置
+
+- strokeWidth,backStrokewidth 进度条和背景的宽度
+- strokeColor,backStrokeColor 进度条和背景的颜色
+- fillColor: 填充颜色
+- textStyle: 显示文字的样式
+- lineHeight: type=line 时,进度条高度
+- radius: type=circle 时,circle 的半径大小
+- borderRadius: type=line,rect 时的圆角大小
+
+更多请查看[API 使用介绍](#instructions)
+
+```jsx
+export default function Demo() {
+  return (
+    <HemyProgress
+      type="circle"
+      percentage={60}
+      radius={80}
+      strokeColor="red"
+      fillColor="#D7BDE2"
+      backStrokeColor="#F5EEF8"
+      strokeWidth={20}
+      backStrokeWidth={20}
+      strokeLinecap="round"
+      textStyle={{ fontSize: '20px', color: 'green' }}
+    />
+  );
+}
+```
+
+进度条颜色可传入一个颜色数组 如 strokeColor=['green','blue','yellow','orange','red'],在进度 0-20,20-40,40-60,60-80,80-100 时分别显示'green','blue','yellow','orange','red'
+
 ```jsx
 export default function Demo() {
   const [percentage, setPercentage] = useState(0);
@@ -99,14 +106,14 @@ export default function Demo() {
 }
 ```
 
-
 ## 虚线样式
+
 - isDashed:Boolean 开启虚线
 - dashedLength:Number 虚线长度
 - dashedDistance:Number 虚线间隔
 
-<font color='red'>当type为line时,虚线需要设置合适虚线长度和虚线间隔,以便最后一个虚线刚好落在容器的最后面,例:虚线宽度和间隔都为5px,则进度条(容器)总宽度可以设为105px 115px 125px...
-</font> 
+<font color='red'>当 type 为 line 时,虚线需要设置合适虚线长度和虚线间隔,以便最后一个虚线刚好落在容器的最后面,例:虚线宽度和间隔都为 5px,则进度条(容器)总宽度可以设为 105px 115px 125px...
+</font>
 
 ```jsx
 export default function Demo() {
@@ -116,11 +123,12 @@ export default function Demo() {
     </div>
   );
 }
-  
 ```
+
 ## 自定义图形
+
 - type=path
-- d值必填
+- d 值必填
 - pathLength 自定义图形路径的总长度,如果存在，路径将进行缩放，以便计算各点相当于此值的路径长度
 
 ```jsx
@@ -140,7 +148,9 @@ export default function Demo() {
 ```
 
 ## 自定义显示内容(插槽)
-- 以属性slot值方式传入
+
+- 以属性 slot 值方式传入
+
 ```jsx
 const slot = (
   <div style={{ textAlign: 'center' }}>
@@ -149,12 +159,12 @@ const slot = (
   </div>
 );
 export default function Demo() {
-  return <HemyProgress type="circle" percentage={60} slot={slot} />
+  return <HemyProgress type="circle" percentage={60} slot={slot} />;
 }
-
 ```
 
-## API使用介绍
+## API 使用介绍
+
 <div id='instructions'></div>
 <table>
   <tr>
